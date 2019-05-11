@@ -7,4 +7,6 @@ strengthsleo = input("What are your characters strengths leo?")
 weaknesses = input("what are your characters weaknesses?")
 print("leo your characters weaknesses " + weaknesses)
 print("leo your strengths are" + strengthsleo)
-print("leo your name is" + nameleo)
+agetest = 9
+agetest == 7
+
