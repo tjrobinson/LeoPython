@@ -1,9 +1,14 @@
-import random
+
 exitchoice = "Nothing"
 while exitchoice != "EXIT":
+    print("Dare You Enter Castle Dragonsnax")
+    print("          The Game")
+    print("Type yes to play")
+    if playchoice == "yes": 
+
     print("You are in a dark room in a myserious castle")
-    print("In front of you are 3 doors. you must chose one")
-    playerchoice = input("Chose 1,2 or 3")
+    print("In front of you are 4 doors. you must chose one")
+    playerchoice = input("Chose 1,2,3 or 4")
     if playerchoice == "1":
         print("You find yourself in a room full of treasure you're rich!")
         print("GAME OVER, YOU WIN!")
@@ -24,7 +29,25 @@ while exitchoice != "EXIT":
             print("GAME OVER, YOU WIN")
         else:
             print("Sorry, you didn't enter 1 or 2!")
+    elif playerchoice == "4":
+        print("You enter a room with a sphinx.")
+        print("It asks you what number it is thinking of, between one and 5.")
+        playerchoicesphinx = int(input("What number do you choose?"))
+        import random
+        if playerchoicesphinx == random.randint(1,5):
+            print("The sphinx hisses in disappointment. You guessed correctly.")
+            print("She must let you go.")
+            print("GAME OVER, YOU WIN!")
+        else:
+            print("The sphinx tells you that your guess is incorrect.")
+            print("You are her prisoner forever")
+            print("GAME OVER, YOU LOSE!")
     else:
-        print("Sorry, you didn't enter 1,2 or 3")
+        print("Sorry, you didn't enter 1,2,3 or 4")
     print("Run the program again to have another go.")
     exitchoice = input("Press return to play again, or type EXIT to leave")
+    if exitchoice == "EXIT":
+        exitchoice2 = input("Are you sure you want to leave? Type 'EXIT' to leave or press enter to play again.")
+        if exitchoice2 == "EXIT":
+            print("Quitting...")
+            print("Done!")
