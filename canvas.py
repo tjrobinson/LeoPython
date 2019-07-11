@@ -1,0 +1,55 @@
+import tkinter
+import random
+print("To draw, hold down the left mouse button and move your mouse around.")
+print("To change your brush colour, click on one of the squares.")
+#colourchoice = input("Press enter here to make the colour random or type 'no' to carry on.")
+#colours = {1:"yellow",2:"red",3:"blue"}
+#if colourchoice == "":
+#    colour = random.randint(colours)
+whidth = 3
+window = tkinter.Tk()
+canvas = tkinter.Canvas(window, width=750, height=500, bg="white")
+canvas.pack()
+lastX, lastY = 0,0
+def store_position(event):
+    global lastX, lastY
+    lastX = event.x
+    lastY = event.y
+def on_click(event):
+    store_position(event)
+def on_drag(event):
+    canvas.create_line(lastX, lastY, event.x, event.y, fill = colour, width = whidth)
+    store_position(event)
+canvas.bind("<Button-1>", on_click)
+canvas.bind("<B1-Motion>", on_drag)
+
+red_id = canvas.create_rectangle(10, 10, 30, 30, fill="red")
+blue_id = canvas.create_rectangle(10, 35, 30, 55, fill="blue")
+white_id = canvas.create_rectangle(10, 85, 30, 105, fill="white")
+black_id = canvas.create_rectangle(10, 60, 30, 80, fill="black")
+
+def set_colour_red(event):
+    global colour
+    colour=colours(1)
+    global whidth
+    whidth = 3
+def set_colour_blue(event):
+    global colour
+    colour=colours(2)
+    global whidth
+    whidth = 3
+def set_colour_black(event):
+    global colour
+    colour=colours(0)
+    global whidth
+    whidth = 3
+def set_colour_white(event):
+    global colour
+    colour=colours(3)
+    global whidth
+    whidth = 12
+canvas.tag_bind(red_id, "<Button-1>", set_colour_red)
+canvas.tag_bind(blue_id, "<Button-1>", set_colour_blue)
+canvas.tag_bind(black_id, "<Button-1>", set_colour_black)
+canvas.tag_bind(white_id, "<Button-1>", set_colour_white)
+window.mainloop()
