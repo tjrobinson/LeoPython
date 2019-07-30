@@ -35,10 +35,11 @@ for x in range(0,2):
         encryptedString = ""
         for currentCharacter in StringToEncrypt:
             position = Alphabet.find(currentCharacter)
-            newPosition = position + ShiftAmount
+            newPosition = position - ShiftAmount
             if currentCharacter in Alphabet:
                 encryptedString = encryptedString +  Alphabet[newPosition]
             else:
                 encryptedString = encryptedString + currentCharacter
             encryptedString = encryptedString.lower()
         print("The message is", encryptedString)
+    nothing = input("")
