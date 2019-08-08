@@ -47,5 +47,6 @@ def playgame():
         global lasers, paintsplats
         global deaths
         global scores
-        createlaser()
+        if Choice == "laser":
+            createlaser()
 playgame()
