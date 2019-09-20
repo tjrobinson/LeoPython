@@ -9,3 +9,4 @@ while x != 1:
     print("The number is",x)
 print("GAME OVER")
 print(c)
+x = 0
