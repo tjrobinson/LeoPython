@@ -6,7 +6,7 @@ while x != 1:
     else:
         x = (x * 3) + 1
     c = c + 1
-    print("The number is",x)
+    print("The number is", x)
 print("GAME OVER")
 print(c)
 x = 0

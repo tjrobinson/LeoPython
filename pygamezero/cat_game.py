@@ -47,8 +47,12 @@ def update():
             elif keyboard.down:
                 toy.y = toy.y + 4
                 clock.schedule(move_cat, 5.0)
+    cat1.pos = toy.pos
+    cat2.pos = toy.pos
     if game_over == True:
         question = messagebox.askyesno("Do you want to play again?")
 def move_cat():
     cat1.pos = toy.pos
     cat2.pos = toy.pos
+
+
