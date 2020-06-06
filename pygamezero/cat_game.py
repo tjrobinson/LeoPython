@@ -55,4 +55,3 @@ def move_cat():
     cat1.pos = toy.pos
     cat2.pos = toy.pos
 
-
